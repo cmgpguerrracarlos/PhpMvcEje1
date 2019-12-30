@@ -16,7 +16,7 @@
             }
         }
 
-        public function Listar(){
+        public function SelectAll(){
             try{
                 $sql = "SELECT * FROM sucursal";
                 $stm = $this->con->prepare($sql);
@@ -28,7 +28,7 @@
             }
         }
 
-        public function Obtener($id){
+        public function SelectId($id){
             try {
                 $sql="SELECT * FROM sucursal WHERE cod=?";
                 $stm = $this->con->prepare($sql);
@@ -41,7 +41,7 @@
 
         }
 
-        public function Eliminar($id){
+        public function DeleteId($id){
             try {
                 
             } catch (Exception $e) {
@@ -49,7 +49,7 @@
             }
         }
 
-        public function Actualizar($data){
+        public function Update($data){
             try {
                 //code...
             } catch (Exception $e) {
@@ -57,9 +57,13 @@
             }
         }
 
-        public function Registrar($data){
+        public function Insert($data){
             try {
-                //code...
+                $sql = "INSERT INTO sucursal (cod,dir,ciudad,dpto) VALUES (?,?,?,?)";
+                $stm = $this->con->prepare($sql);
+                $stm->execute(array($data->cod,$data->dir,$data->ciudad,$data->dpto));
+                echo "<br>Insertado<br>";
+
             } catch (Exception $e) {
                 die($e->getMessage());
             }
