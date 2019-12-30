@@ -47,7 +47,10 @@
 
         public function DeleteId($id){
             try {
-                
+                $sql = "DELETE FROM sucursal WHERE cod=?";
+                $stm = $this->con->prepare($sql);
+                $stm->execute(array($id));
+                echo "<br>Deleted cod=$id<br>";
             } catch (Exception $e) {
                 die($e->getMessage());
             }
