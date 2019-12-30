@@ -10,7 +10,7 @@
 
         public function __construct(){
             try{
-                $this->con = Db::conn();
+                $this->con = Db::StartUp();
             }catch(Exception $e){
                 die($e->getMessage());
             }
@@ -58,7 +58,12 @@
 
         public function Update($data){
             try {
-                //code...
+                $id = $data->cod;
+                $sql = "UPDATE sucursal SET cod=?, dir=?, ciudad=?, dpto=? WHERE cod=$id";
+                $stm = $this->con->prepare($sql);
+                $stm->execute(array($data->cod,$data->dir,$data->ciudad,$data->dpto));
+                echo "<br>Actualizado<br>";
+
             } catch (Exception $e) {
                 die($e->getMessage());
             }

@@ -25,16 +25,9 @@ echo "Inicio prueba: <br>";
 $s = new Sucursal();
 $arr = $s->SelectAll();
 PrintTable($arr);
-//$s->DeleteId(8);
-//$arr = $s->SelectAll();
-//PrintTable($arr);
-
-
-
-
-
-
 //$nueva = CreateObjSucursal(8,"Lorenzo Carneli 333", "Montevideo", "Montevideo");
 //$s->Insert($nueva);
-//PrintTable();
+//$s->Update($nueva);
+//$arr = $s->SelectAll();
+//PrintTable($arr);
 ?>
