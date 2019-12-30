@@ -2,7 +2,7 @@
 
 require_once 'sucursal.php';
 
-echo "Inicio: <br>";
+echo "Inicio prueba: <br>";
 $s = new Sucursal();
 
 $arr = $s->Listar();
