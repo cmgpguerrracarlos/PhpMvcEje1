@@ -16,6 +16,10 @@
             }
         }
 
+        public function __destruct(){
+            echo "destryed the object";
+        }
+
         public function SelectAll(){
             try{
                 $sql = "SELECT * FROM sucursal";
